@@ -21,9 +21,10 @@
         즉, 한 상품에 5만개의 리뷰가 있다면 한 상품 리뷰에서만 requests 5천번 필요
         
 
-처음 모든 데이터를 긁어오는 과정은 굉장히
+처음 모든 데이터를 긁어오는 과정은 굉장히 오래 걸림. 처음에 모두 수집 후 주기적으로 돌릴 땐 처음 5개 페이지 정보만 받아올 수 있도록 해야함.
 
- 오래 걸림. 처음에 모두 수집 후 주기적으로 돌릴 땐 처음 5개 페이지 정보만 받아올 수 있도록 해야함.
+<br>
+<br>
 
 # w컨셉
 
@@ -38,6 +39,9 @@
 1. 상품 정보의 1단계와 똑같이 진행하는데 id만 뽑아옴
 2. 각 product id별로 https://www.wconcept.co.kr/Ajax/GetProductsInfo api 에 item id를 payload로 **post requests** 날려서 상품의 medium_cd, category_cd, itemtypecd를 저장(얘네를 payload로 써서 api에서 리뷰 얻어올 수 있음)
 3. https://www.wconcept.co.kr/Ajax/ProductReViewList 위에서 얻어온 각 상품 id 별 medium_cd, category_cd, itemtypecd (+ page)를 payload로 써서 **post requests** 날리면 한 페이지의 10개 리뷰 정보를 스크래핑 가능. 한 상품에서 마지막 리뷰 페이지의 정보까지 받아올 때 까지 **post requests** 날리면서 리뷰 모두 수집
+
+<br>
+<br>
 
 # 한섬
 
