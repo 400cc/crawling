@@ -48,6 +48,9 @@ def get_item_info(goods):
     goodsRevCnt = goods['goodsRevCnt']
 
     return [goodsNo, goodsRevCnt]
+
+
+
 def get_items(num):
     url = f'https://www.thehandsome.com/api/display/1/ko/category/categoryGoodsList?dispMediaCd=10&sortGbn=20&pageSize={ITEMS_COUNT}&pageNo=1&norOutletGbCd=J&dispCtgNo={num}&productListLayout=4&theditedYn=N'
 
@@ -123,7 +126,7 @@ def get_one_review(review):
         'product_sku': product_sku,
         'import_source': import_source,
         'user_height': height,
-        'user_weight': nor_size,
+        'user_size': nor_size,
         'rating': rating,
 
     }
