@@ -132,7 +132,7 @@ def extract_needs_info(item_info):
         image_urls.append(goodsImage['imageUrl'])
 
     stat_url = f'https://goods-detail.musinsa.com/goods/{product_id}/stat'
-    response = requests.get(stat_url, headers=headers, timeout=timeout_settings)
+    response = requests.get(stat_url, headers=headers)
     add_data = response.json()
     
     # 누적 판매
