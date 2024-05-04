@@ -16,8 +16,8 @@ middle_category_nums = ['001006', '001004', '001005', '001010', '001002', '00100
                         '002023', '002018', '002004', '002008', '002007', '002024',
                         '002009', '002013', '002012', '002016', '002021', '002014',
                         '002006', '002015', '003002', '003007', '003008', '003004',
-                        '003009', '003005', '003010', '003011', '003006', '002006',
-                        '002007', '002008', '022001', '022002', '022003']
+                        '003009', '003005', '003010', '003011', '003006', '020006',
+                        '020007', '020008', '022001', '022002', '022003']
 
 # 사용자 에이전트
 headers = {
@@ -109,6 +109,12 @@ def extract_needs_info(item_info):
     # 무신사 상품번호
     product_id = item_info['goodsNo']
 
+    # 대분류
+    top = item_info['category']['categoryDepth1Title']
+
+    # 중분류
+    middle = item_info['category']['categoryDepth2Title']
+
     # 브랜드 명명
     brand = item_info['brand']
 
@@ -176,6 +182,8 @@ def extract_needs_info(item_info):
 
     data = {
         'product_id': product_id,
+        'top': top,
+        'middle': middle,
         'brand': brand,
         'product_num': product_num,
         'likes': likes,

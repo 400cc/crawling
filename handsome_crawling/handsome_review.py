@@ -96,9 +96,6 @@ def get_one_review(review):
     # 구매 사이즈
     size = review['goodsSzNm']
 
-    # 구매 sku
-    product_sku = {'color': color, 'size': size}
-
     # 수입처
     import_source = review['shopNm']
 
@@ -123,7 +120,8 @@ def get_one_review(review):
         'written_date': written_date,
         'user_id': user_id,
         'body': revCont,
-        'product_sku': product_sku,
+        'color': color,
+        'size': size,
         'import_source': import_source,
         'user_height': height,
         'user_size': nor_size,
