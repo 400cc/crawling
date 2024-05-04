@@ -1,10 +1,11 @@
-import time
 from bs4 import BeautifulSoup
-import pandas as pd
 import requests
 import json
+import sys
 
 ITEMS_COUNT = 100
+
+responses = []
 
 headers = {
     'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0.0.0 Safari/537.36',
@@ -15,8 +16,8 @@ def get_response(url, headers):
 
     # GET 요청
     response = requests.get(url, headers=headers)
+    responses.append(response.text)
     soup = BeautifulSoup(response.text, 'lxml')
-    time.sleep(0.5)
 
     return soup
 
@@ -184,7 +185,9 @@ def main():
         all_additional_info.append(additional_info)
         print(additional_info)
 
-    
+    print(sys.getsizeof(responses))
+
+
 
 if __name__ == '__main__':
     main()  

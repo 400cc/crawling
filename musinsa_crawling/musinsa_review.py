@@ -109,12 +109,12 @@ def extract_one_review(review, product_num):
     data = {
         'product_id': product_num,
         'review_id': review_id,
-        'user_name': user_name,
+        'user_info': user_name,
         'meta_data': meta_dict,
         'body': content,
         'helpful': helpful,
         'good_style': style_good,
-        'star': star
+        'rate': star
     }
 
     return data
